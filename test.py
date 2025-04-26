@@ -8,8 +8,10 @@ extractor = PDFPageExtractor(
 )
 markdown_path = r"D:/test/test2.md"
 with MarkDownWriter(markdown_path, "images", "utf-8") as md:
-    for block in extractor.extract(pdf=r"21583473018.pdf"):
+    for block in extractor.extract(pdf=r"scansmpl.pdf"):
         md.write(block)
+
+print("single")
 print(datetime.datetime.now() - start_time)
 start_time = datetime.datetime.now()
 
@@ -23,7 +25,7 @@ extractor = PDFPageExtractor(
 
 markdown_path = r"D:/test/test_multiple.md"
 with MarkDownWriter(markdown_path, "images", "utf-8") as md:
-    for block in extractor.extract(pdf=r"21583473018.pdf"):
+    for block in extractor.extract(pdf=r"scansmpl.pdf"):
         md.write(block)
-
+print("multiple")
 print(datetime.datetime.now() - start_time)
